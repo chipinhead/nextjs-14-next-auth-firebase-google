@@ -17,7 +17,7 @@ export default async function RootLayout({
   console.log(session);
   return (
     <html lang="en">
-      <body style={{ backgroundColor: '#ccc' }}>
+      <body className="min-h-screen flex flex-col">
         <header className="bg-midnight-blue p-4 flex justify-between items-center">
           <h1 className="text-white m-0">YOUR APP SUCKS</h1>
           {session ? (
@@ -26,7 +26,9 @@ export default async function RootLayout({
             <LoginButton />
           )}
         </header>
-        <SessionProvider session={session}>{children}</SessionProvider>
+        <main className="flex-grow bg-background">
+          <SessionProvider session={session}>{children}</SessionProvider>
+        </main>
       </body>
     </html>
   );
