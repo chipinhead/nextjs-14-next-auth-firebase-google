@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import SessionProvider from './SessionProvider';
 import React from 'react';
+import LoginButton from './components/LoginButton'; // Create this component
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +18,9 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body style={{ backgroundColor: '#ccc' }}>
-        <header style={{ backgroundColor: '#004f76', padding: '1rem' }}>
+        <header style={{ backgroundColor: '#004f76', padding: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h1 style={{ color: 'white', margin: 0 }}>YOUR APP SUCKS</h1>
+          {!session && <LoginButton />}
         </header>
         <SessionProvider session={session}>{children}</SessionProvider>
       </body>
