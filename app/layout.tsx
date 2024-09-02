@@ -18,10 +18,10 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body style={{ backgroundColor: '#ccc' }}>
-        <header style={{ backgroundColor: '#004f76', padding: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h1 style={{ color: 'white', margin: 0 }}>YOUR APP SUCKS</h1>
+        <header className="bg-midnight-blue p-4 flex justify-between items-center">
+          <h1 className="text-white m-0">YOUR APP SUCKS</h1>
           {session ? (
-            <span style={{ color: 'white' }}>Sup! {session.user?.name}</span>
+            <span className="text-white">Sup! {session.user?.name}</span>
           ) : (
             <LoginButton />
           )}
