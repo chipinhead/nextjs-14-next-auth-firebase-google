@@ -3,6 +3,7 @@
 import { Session } from 'next-auth';
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
+import { signOut } from 'next-auth/react';
 import LoginButton from './LoginButton';
 
 interface AccountMenuProps {
@@ -44,6 +45,7 @@ export default function AccountMenu({ session }: AccountMenuProps) {
                 <Menu.Item>
                   {({ active }) => (
                     <button
+                      onClick={() => signOut()}
                       className={`${
                         active ? 'bg-primary text-white' : 'text-primary'
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
