@@ -5,6 +5,7 @@ import "./globals.css";
 import SessionProvider from './SessionProvider';
 import React from 'react';
 import LoginButton from './components/LoginButton'; // Create this component
+import AccountMenu from './components/AccountMenu'; // Add this import
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,11 +21,7 @@ export default async function RootLayout({
       <body className="min-h-screen flex flex-col">
         <header className="bg-midnight-blue p-4 flex justify-between items-center">
           <h1 className="text-white m-0">YOUR APP SUCKS</h1>
-          {session ? (
-            <span className="text-white">Sup! {session.user?.name}</span>
-          ) : (
-            <LoginButton />
-          )}
+          <AccountMenu session={session} />
         </header>
         <main className="flex-grow bg-background">
           <SessionProvider session={session}>{children}</SessionProvider>
