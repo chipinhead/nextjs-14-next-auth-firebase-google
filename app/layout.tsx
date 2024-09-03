@@ -19,7 +19,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
-        <header className="bg-midnight-blue p-4 flex justify-between items-center">
+        <header className="bg-primary p-4 flex justify-between items-center">
           <h1 className="text-white m-0">YOUR APP SUCKS</h1>
           <AccountMenu session={session} />
         </header>
