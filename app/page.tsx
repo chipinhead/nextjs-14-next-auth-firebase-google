@@ -13,11 +13,13 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className="text-center">
       <form onSubmit={handleCheckAuthStatus}>
-        <button type="submit">Check API Auth Status</button>
+        <button type="submit" className="bg-primary text-white px-4 py-2 rounded">
+          Check API Auth Status
+        </button>
       </form>
-      {authStatus && <p>{authStatus}</p>}
+      {authStatus && <p className="mt-4">{authStatus}</p>}
     </div>
   );
 }

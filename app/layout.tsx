@@ -23,7 +23,7 @@ export default async function RootLayout({
           <h1 className="text-white m-0">YOUR APP SUCKS</h1>
           <AccountMenu session={session} />
         </header>
-        <main className="flex-grow bg-background">
+        <main className="flex-grow bg-background flex items-center justify-center">
           <SessionProvider session={session}>{children}</SessionProvider>
         </main>
       </body>
