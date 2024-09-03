@@ -1,4 +1,4 @@
-export async function checkAuthStatus(): Promise<string> {
+export async function checkAPIAuthStatus(): Promise<string> {
   try {
     const res = await fetch('/api/auth-status', {
       method: 'GET',
